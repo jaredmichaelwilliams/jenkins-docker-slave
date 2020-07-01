@@ -29,6 +29,7 @@ COPY .ssh/authorized_keys /home/jenkins/.ssh/authorized_keys
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ && \
     chown -R jenkins:jenkins /home/jenkins/.ssh/
 
+RUN echo "jenkins ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 # Standard SSH port
 EXPOSE 22
 
